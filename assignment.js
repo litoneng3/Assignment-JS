@@ -8,11 +8,13 @@ function kilometerToMeter(kilometer) {
     if (kilometer >= 0) {
         return meter;
     }
-    else {
+    else if (kilometer < 0) {
         return "distance can't be negative";
     }
+    else {
+        return "invalid input. Please enter a number.";
+    }
 }
-var totalMeter = kilometerToMeter(0);
 
 
 // kilometerToMeter function ends
@@ -24,13 +26,14 @@ function budgetCalculator(watch, phone, calculator) {
         var totalCost = watch * 50 + phone * 100 + calculator * 500;
         return totalCost;
     }
-    else {
+    else if (watch < 0 || phone < 0 || calculator < 0) {
         return "Number of watch, phone and calculator can't be negative";
+    }
+    else {
+        return "Invalid input. Please enter the number of watch, phone and calculator.";
     }
 
 }
-var totalCost = budgetCalculator(1, 2, -4);
-console.log(totalCost);
 
 // budgetCalculator function ends
 
@@ -57,13 +60,14 @@ function hotelCost(days) {
         }
         return totalCost;
     }
-    else {
+    else if (days < 0) {
         return "days can't be negative";
+    }
+    else {
+        return "Invalid input. Please enter the number of days.";
     }
 
 }
-var totalCost = hotelCost(-25);
-console.log(totalCost);
 
 // hotelCost function ends
 
@@ -83,13 +87,8 @@ function megaFriend(friend) {
         return longestName;
     }
     else {
-        return "distance can't be negative";
+        return "The array is empty.";
     }
 
 }
-
-var friends = ["Liton", "Sumona", "Kamrunnahar", "Kamruzzamann", "shamsuddin", "shdfsghsfghfjsfjdhhgs"];
-var l = megaFriend(friends);
-console.log(l);
-
 // megaFriend function ends
